@@ -23,3 +23,11 @@ y = House_df['Price']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 #checking the shape of training and testing sets
 print("X_train shape:", X_train.shape)
+print("X_test shape:", X_test.shape)
+#buidling the regression model
+Housing_Regression_model = LinearRegression()
+#training the model
+Housing_Regression_model.fit(X_train, y_train)
+#making predictions
+House_price_predictions = Housing_Regression_model.predict(X_test)
+#evaluating the model
